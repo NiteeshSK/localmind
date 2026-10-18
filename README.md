@@ -6,6 +6,9 @@
 
 *No API keys. No network calls. No telemetry. Just your laptop, a 2 GB model file, and honest numbers.*
 
+🏆 **2nd Prize, Best Mini Project**, Department of Information Technology, St. Joseph's Institute of Technology, Chennai
+<br><sub>Niteesh Kumar S K · Apr–Aug 2025</sub>
+
 [![Python](https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Ollama](https://img.shields.io/badge/runtime-Ollama-000000?logo=ollama&logoColor=white)](https://ollama.com/)
 [![Pydantic](https://img.shields.io/badge/validation-Pydantic%20v2-E92063?logo=pydantic&logoColor=white)](https://docs.pydantic.dev/)
@@ -49,6 +52,8 @@ than a frontier API model. Phase 3 exists to tell you exactly how much.
 ---
 
 ## 🎬 What it looks like
+
+*Illustrative terminal sessions; the numbers depend entirely on your hardware.*
 
 ```console
 $ localmind ask "Explain time-to-first-token in one sentence."
@@ -175,7 +180,7 @@ ollama pull mistral:7b         # ~4.4 GB  — the quality ceiling on 16 GB CPU
 ### 3. Install LocalMind
 
 ```bash
-git clone https://github.com/<you>/localmind.git
+git clone https://github.com/NiteeshSK/localmind.git
 cd localmind
 python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install -e ".[api,dev]"
