@@ -1,0 +1,13 @@
+# core
+requests>=2.31
+pydantic>=2.6
+typer>=0.12
+rich>=13.7
+psutil>=5.9
+
+# optional: FastAPI wrapper (localmind serve)
+fastapi>=0.110
+uvicorn>=0.29
+
+# optional: tests
+pytest>=8.0

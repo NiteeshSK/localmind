@@ -1,0 +1,23 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# generated artefacts — keep the code, not the outputs
+results/*.json
+reports/*.md
+!reports/.gitkeep
+!results/.gitkeep
+!docs/SAMPLE_REPORT.md
+
+.DS_Store
+.idea/
+.vscode/
