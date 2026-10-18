@@ -1,0 +1,559 @@
+{
+  "name": "localmind-core-v1",
+  "version": "1.0",
+  "description": "40 prompts across 8 categories for cross-model comparison on constrained hardware.",
+  "prompts": [
+    {
+      "id": "fact-01",
+      "category": "factual",
+      "prompt": "In two sentences, what is the difference between RAM and storage in a computer?",
+      "expected_keywords": [
+        "volatile",
+        "power",
+        "permanent",
+        "disk"
+      ],
+      "checks": {
+        "max_words": 70
+      },
+      "num_predict": 256
+    },
+    {
+      "id": "fact-02",
+      "category": "factual",
+      "prompt": "What does the acronym API stand for, and what does an API do? Answer in under 50 words.",
+      "expected_keywords": [
+        "application",
+        "programming",
+        "interface"
+      ],
+      "checks": {
+        "max_words": 60
+      },
+      "num_predict": 256
+    },
+    {
+      "id": "fact-03",
+      "category": "factual",
+      "prompt": "Name the seven layers of the OSI model in order, from layer 1 to layer 7.",
+      "expected_keywords": [
+        "physical",
+        "data link",
+        "network",
+        "transport",
+        "session",
+        "presentation",
+        "application"
+      ],
+      "checks": {
+        "max_words": 90
+      },
+      "num_predict": 256
+    },
+    {
+      "id": "fact-04",
+      "category": "factual",
+      "prompt": "What is the capital city of Australia, and why is it not Sydney?",
+      "expected_keywords": [
+        "canberra",
+        "compromise",
+        "melbourne"
+      ],
+      "checks": {
+        "max_words": 80
+      },
+      "num_predict": 256
+    },
+    {
+      "id": "fact-05",
+      "category": "factual",
+      "prompt": "Explain what HTTP status code 404 means and give one common cause.",
+      "expected_keywords": [
+        "not found",
+        "resource",
+        "url"
+      ],
+      "checks": {
+        "max_words": 60
+      },
+      "num_predict": 256
+    },
+    {
+      "id": "fact-06",
+      "category": "factual",
+      "prompt": "What is the boiling point of water at sea level in both Celsius and Fahrenheit?",
+      "expected_keywords": [
+        "100",
+        "212"
+      ],
+      "checks": {
+        "max_words": 40
+      },
+      "num_predict": 256
+    },
+    {
+      "id": "reason-01",
+      "category": "reasoning",
+      "prompt": "A train leaves at 14:20 and the journey takes 3 hours 55 minutes. What time does it arrive? Show your working.",
+      "expected_keywords": [
+        "18:15",
+        "6:15"
+      ],
+      "checks": {
+        "max_words": 90
+      },
+      "num_predict": 256
+    },
+    {
+      "id": "reason-02",
+      "category": "reasoning",
+      "prompt": "If all Bloops are Razzies, and all Razzies are Lazzies, are all Bloops definitely Lazzies? Explain your reasoning in one short paragraph.",
+      "expected_keywords": [
+        "yes",
+        "transitive"
+      ],
+      "checks": {
+        "max_words": 90
+      },
+      "num_predict": 256
+    },
+    {
+      "id": "reason-03",
+      "category": "reasoning",
+      "prompt": "A shop sells pens at 12 rupees each. I have 100 rupees. How many pens can I buy and how much change do I get?",
+      "expected_keywords": [
+        "8",
+        "4"
+      ],
+      "checks": {
+        "max_words": 70
+      },
+      "num_predict": 256
+    },
+    {
+      "id": "reason-04",
+      "category": "reasoning",
+      "prompt": "Sara is taller than Mia. Mia is taller than Ana. Ana is taller than Ravi. Who is the shortest, and who is the second tallest?",
+      "expected_keywords": [
+        "ravi",
+        "mia"
+      ],
+      "checks": {
+        "max_words": 60
+      },
+      "num_predict": 256
+    },
+    {
+      "id": "reason-05",
+      "category": "reasoning",
+      "prompt": "You have a 3-litre jug and a 5-litre jug and unlimited water. Describe how to measure exactly 4 litres.",
+      "expected_keywords": [
+        "fill",
+        "pour",
+        "5",
+        "3"
+      ],
+      "checks": {
+        "max_words": 140
+      },
+      "num_predict": 256
+    },
+    {
+      "id": "reason-06",
+      "category": "reasoning",
+      "prompt": "My server responds in 200 ms when idle and 2000 ms under load. Load happens 10% of the time. What is the average response time?",
+      "expected_keywords": [
+        "380"
+      ],
+      "checks": {
+        "max_words": 70
+      },
+      "num_predict": 256
+    },
+    {
+      "id": "math-01",
+      "category": "math",
+      "prompt": "Compute 17 * 24 and show the intermediate steps.",
+      "expected_keywords": [
+        "408"
+      ],
+      "checks": {
+        "max_words": 80
+      },
+      "num_predict": 256
+    },
+    {
+      "id": "math-02",
+      "category": "math",
+      "prompt": "What is 15% of 240? Give just the number and a one-line calculation.",
+      "expected_keywords": [
+        "36"
+      ],
+      "checks": {
+        "max_words": 40
+      },
+      "num_predict": 256
+    },
+    {
+      "id": "math-03",
+      "category": "math",
+      "prompt": "Solve for x: 3x + 7 = 25. Show each step.",
+      "expected_keywords": [
+        "6"
+      ],
+      "checks": {
+        "max_words": 70
+      },
+      "num_predict": 256
+    },
+    {
+      "id": "math-04",
+      "category": "math",
+      "prompt": "A model generates 40 tokens per second. How long, in seconds, does a 600-token reply take? Give one decimal place.",
+      "expected_keywords": [
+        "15"
+      ],
+      "checks": {
+        "max_words": 50
+      },
+      "num_predict": 256
+    },
+    {
+      "id": "code-01",
+      "category": "code",
+      "prompt": "Write a Python function `is_palindrome(s)` that ignores case, spaces and punctuation. Return only the code.",
+      "expected_keywords": [
+        "def",
+        "is_palindrome",
+        "return"
+      ],
+      "checks": {
+        "must_contain_code": true
+      },
+      "num_predict": 400
+    },
+    {
+      "id": "code-02",
+      "category": "code",
+      "prompt": "Write a Python one-liner that reverses the keys and values of a dictionary `d`.",
+      "expected_keywords": [
+        "items()",
+        "for",
+        "}"
+      ],
+      "checks": {
+        "max_words": 60
+      },
+      "num_predict": 200
+    },
+    {
+      "id": "code-03",
+      "category": "code",
+      "prompt": "Explain what this code does and name the bug:\n\ndef avg(nums):\n    return sum(nums) / len(nums)\n\nWhat happens if nums is empty?",
+      "expected_keywords": [
+        "zerodivisionerror",
+        "empty",
+        "division"
+      ],
+      "checks": {
+        "max_words": 110
+      },
+      "num_predict": 256
+    },
+    {
+      "id": "code-04",
+      "category": "code",
+      "prompt": "Write a bash command that finds all .log files under /var/log modified in the last 24 hours.",
+      "expected_keywords": [
+        "find",
+        "mtime",
+        "-name"
+      ],
+      "checks": {
+        "max_words": 60
+      },
+      "num_predict": 200
+    },
+    {
+      "id": "code-05",
+      "category": "code",
+      "prompt": "Write a Python function using `requests` that GETs a URL and retries 3 times with exponential backoff. Return only the code.",
+      "expected_keywords": [
+        "def",
+        "for",
+        "sleep",
+        "try"
+      ],
+      "checks": {
+        "must_contain_code": true
+      },
+      "num_predict": 500
+    },
+    {
+      "id": "code-06",
+      "category": "code",
+      "prompt": "In SQL, what is the difference between INNER JOIN and LEFT JOIN? Answer in under 60 words.",
+      "expected_keywords": [
+        "inner",
+        "left",
+        "null",
+        "match"
+      ],
+      "checks": {
+        "max_words": 70
+      },
+      "num_predict": 256
+    },
+    {
+      "id": "json-01",
+      "category": "extraction",
+      "prompt": "Extract the entities from this sentence as JSON with keys people, organizations, locations, dates:\n\"On 12 March 2024, Priya Raman of Infosys met Daniel Cho in Bengaluru.\"",
+      "expected_keywords": [
+        "priya",
+        "infosys",
+        "bengaluru"
+      ],
+      "checks": {
+        "must_be_json": true
+      },
+      "num_predict": 300,
+      "schema": "entities"
+    },
+    {
+      "id": "json-02",
+      "category": "extraction",
+      "prompt": "Return JSON with keys intent, device, value, unit for this command: \"set the living room thermostat to 22 degrees\"",
+      "expected_keywords": [
+        "set_value",
+        "thermostat",
+        "22"
+      ],
+      "checks": {
+        "must_be_json": true
+      },
+      "num_predict": 250,
+      "schema": "command"
+    },
+    {
+      "id": "json-03",
+      "category": "extraction",
+      "prompt": "Return JSON with keys label, confidence, rationale classifying the sentiment of: \"The battery life is fine but the screen flickers constantly.\"",
+      "expected_keywords": [
+        "mixed",
+        "negative"
+      ],
+      "checks": {
+        "must_be_json": true
+      },
+      "num_predict": 250,
+      "schema": "classification"
+    },
+    {
+      "id": "json-04",
+      "category": "extraction",
+      "prompt": "From this line, return JSON with keys people, organizations, amounts: \"Arun Kumar invoiced TCS for 45000 rupees.\"",
+      "expected_keywords": [
+        "arun",
+        "tcs",
+        "45000"
+      ],
+      "checks": {
+        "must_be_json": true
+      },
+      "num_predict": 250,
+      "schema": "entities"
+    },
+    {
+      "id": "json-05",
+      "category": "extraction",
+      "prompt": "Return JSON with keys intent, device, confidence for: \"is the garage door still open?\"",
+      "expected_keywords": [
+        "query_status",
+        "garage"
+      ],
+      "checks": {
+        "must_be_json": true
+      },
+      "num_predict": 250,
+      "schema": "command"
+    },
+    {
+      "id": "json-06",
+      "category": "extraction",
+      "prompt": "Return JSON with keys label, confidence, rationale for the sentiment of: \"Honestly the best purchase I have made all year.\"",
+      "expected_keywords": [
+        "positive"
+      ],
+      "checks": {
+        "must_be_json": true
+      },
+      "num_predict": 250,
+      "schema": "classification"
+    },
+    {
+      "id": "sum-01",
+      "category": "summarization",
+      "prompt": "Summarise in exactly 3 bullet points:\n\"Edge deployment means running models on the device that produced the data. It removes network round trips, keeps private data local, and works without connectivity. The trade-off is limited memory and compute, which forces smaller or quantized models.\"",
+      "expected_keywords": [
+        "edge",
+        "privacy",
+        "memory"
+      ],
+      "checks": {
+        "min_bullets": 3,
+        "max_words": 110
+      },
+      "num_predict": 256
+    },
+    {
+      "id": "sum-02",
+      "category": "summarization",
+      "prompt": "Summarise this in one sentence under 25 words:\n\"Quantization reduces the numeric precision of model weights from 16-bit floats to 8-bit or 4-bit integers, cutting memory use and often increasing speed, at some cost to accuracy.\"",
+      "expected_keywords": [
+        "quantization",
+        "memory",
+        "precision"
+      ],
+      "checks": {
+        "max_words": 35
+      },
+      "num_predict": 256
+    },
+    {
+      "id": "sum-03",
+      "category": "summarization",
+      "prompt": "Give a title and a 2-sentence summary of:\n\"Time to first token measures the delay before a user sees any output. Tokens per second measures how fast the rest streams. A model can win on one and lose badly on the other, so both must be reported.\"",
+      "expected_keywords": [
+        "first token",
+        "tokens per second"
+      ],
+      "checks": {
+        "max_words": 90
+      },
+      "num_predict": 256
+    },
+    {
+      "id": "sum-04",
+      "category": "summarization",
+      "prompt": "In under 40 words, summarise the main risk of relying on a cloud LLM API for a hospital record system.",
+      "expected_keywords": [
+        "privacy",
+        "data",
+        "offline",
+        "compliance"
+      ],
+      "checks": {
+        "max_words": 50
+      },
+      "num_predict": 256
+    },
+    {
+      "id": "inst-01",
+      "category": "instruction",
+      "prompt": "List exactly 4 benefits of running an LLM locally. Use a numbered list. No introduction, no conclusion.",
+      "expected_keywords": [
+        "privacy",
+        "cost",
+        "latency",
+        "offline"
+      ],
+      "checks": {
+        "min_bullets": 4,
+        "max_words": 90
+      },
+      "num_predict": 256
+    },
+    {
+      "id": "inst-02",
+      "category": "instruction",
+      "prompt": "Answer with a single word only: what is the largest planet in our solar system?",
+      "expected_keywords": [
+        "jupiter"
+      ],
+      "checks": {
+        "max_words": 3
+      },
+      "num_predict": 256
+    },
+    {
+      "id": "inst-03",
+      "category": "instruction",
+      "prompt": "Reply with exactly the text HELLO_WORLD and nothing else.",
+      "expected_keywords": [
+        "HELLO_WORLD"
+      ],
+      "checks": {
+        "max_words": 3
+      },
+      "num_predict": 256
+    },
+    {
+      "id": "inst-04",
+      "category": "instruction",
+      "prompt": "Explain TCP in under 30 words, without using the words 'protocol' or 'packet'.",
+      "expected_keywords": [
+        "connection",
+        "reliable"
+      ],
+      "checks": {
+        "max_words": 40,
+        "must_not_contain": [
+          "protocol",
+          "packet"
+        ]
+      },
+      "num_predict": 256
+    },
+    {
+      "id": "inst-05",
+      "category": "instruction",
+      "prompt": "Write three short lines about rain. Each line must start with the word 'Rain'.",
+      "expected_keywords": [
+        "rain"
+      ],
+      "checks": {
+        "min_bullets": 3,
+        "max_words": 60
+      },
+      "num_predict": 256
+    },
+    {
+      "id": "gen-01",
+      "category": "creative",
+      "prompt": "Write a 4-line poem about a laptop running an AI model offline.",
+      "expected_keywords": [
+        "offline"
+      ],
+      "checks": {
+        "max_words": 70
+      },
+      "num_predict": 256
+    },
+    {
+      "id": "gen-02",
+      "category": "creative",
+      "prompt": "Write a friendly 3-sentence product description for an offline voice assistant for rural clinics.",
+      "expected_keywords": [
+        "offline",
+        "clinic"
+      ],
+      "checks": {
+        "max_words": 90
+      },
+      "num_predict": 256
+    },
+    {
+      "id": "gen-03",
+      "category": "creative",
+      "prompt": "Draft a 2-sentence apology email opening for a delayed software delivery.",
+      "expected_keywords": [
+        "apolog",
+        "delay"
+      ],
+      "checks": {
+        "max_words": 70
+      },
+      "num_predict": 256
+    }
+  ]
+}
