@@ -9,6 +9,7 @@
 🏆 **2nd Prize, Best Mini Project**, Department of Information Technology, St. Joseph's Institute of Technology, Chennai
 <br><sub>Niteesh Kumar S K · Apr–Aug 2025</sub>
 
+[![CI](https://github.com/NiteeshSK/localmind/actions/workflows/ci.yml/badge.svg)](https://github.com/NiteeshSK/localmind/actions/workflows/ci.yml)
 [![Python](https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Ollama](https://img.shields.io/badge/runtime-Ollama-000000?logo=ollama&logoColor=white)](https://ollama.com/)
 [![Pydantic](https://img.shields.io/badge/validation-Pydantic%20v2-E92063?logo=pydantic&logoColor=white)](https://docs.pydantic.dev/)
@@ -34,6 +35,16 @@ It is three things in one codebase:
 | 🖥️ **A usable assistant** | Streaming CLI chat + one-shot queries + a FastAPI wrapper | runs entirely on your machine |
 | 📐 **A measurement rig** | TTFT, decode throughput, prefill throughput, cold-start cost, peak RSS — with medians, p95 and variance | because one sample is an anecdote |
 | 🔬 **An evaluation study** | 40 standardised prompts × N models × quantization levels → an auto-written Markdown report | so model selection is an engineering decision, not a vibe |
+
+### At a glance
+
+| | |
+|---|---|
+| **Evaluation set** | 40 prompts across 8 categories, each with machine-checkable scoring signals |
+| **Structured output** | 6 Pydantic v2 contracts; three-attempt validate-and-repair ladder that returns a typed failure envelope instead of raising |
+| **Measurement** | time-to-first-token, decode and prefill throughput, cold start and peak memory, each with median, p95 and coefficient of variation |
+| **Interfaces** | Typer + Rich CLI (`ask`, `chat`, `bench`, `compare` and 10 more commands) and a FastAPI service (7 endpoints) |
+| **Tests** | 56 tests run against a mock Ollama daemon, so CI needs no GPU and no model weights; CI runs on Ubuntu and Windows with Python 3.10 and 3.12 |
 
 ### Why offline
 
@@ -476,7 +487,7 @@ against [`tools/mock_ollama.py`](tools/mock_ollama.py), a fake daemon that
 implements enough of the Ollama API to be indistinguishable to the client and
 **synthesises a valid instance directly from whatever JSON Schema you send it**.
 
-That is why CI is green on Ubuntu *and* Windows across Python 3.10–3.12 without a
+That is why CI runs on Ubuntu *and* Windows with Python 3.10 and 3.12 without a
 GPU, without weights, and without network access beyond PyPI.
 
 Tests worth reading:
